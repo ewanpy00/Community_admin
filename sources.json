@@ -1,0 +1,73 @@
+[
+  {
+    "type": "devpost",
+    "name": "Devpost",
+    "queries": [
+      "order_by=recently-added",
+      "order_by=prize-amount",
+      "challenge_type[]=online&order_by=prize-amount",
+      "search=uae",
+      "search=dubai",
+      "search=abu dhabi"
+    ],
+    "pages": 3
+  },
+  {
+    "type": "mlh",
+    "name": "MLH"
+  },
+  {
+    "type": "devfolio",
+    "name": "Devfolio"
+  },
+  {
+    "type": "lablab",
+    "name": "lablab.ai"
+  },
+  {
+    "type": "ethglobal",
+    "name": "ETHGlobal"
+  },
+  {
+    "type": "hackerearth",
+    "name": "HackerEarth"
+  },
+  {
+    "type": "luma",
+    "name": "Luma Dubai",
+    "latitude": 25.2048,
+    "longitude": 55.2708,
+    "assumeRegion": true
+  },
+  {
+    "type": "luma",
+    "name": "Luma Abu Dhabi",
+    "latitude": 24.4539,
+    "longitude": 54.3773,
+    "assumeRegion": true
+  },
+  {
+    "type": "luma",
+    "name": "Luma (Founding MENA)",
+    "calendar": "cal-xeW5KWpEfU2jCJW",
+    "assumeRegion": true
+  },
+  {
+    "type": "jsonld",
+    "name": "Meetup Dubai",
+    "url": "https://www.meetup.com/find/?keywords=hackathon&location=ae--Dubai&source=EVENTS",
+    "assumeRegion": true
+  },
+  {
+    "type": "jsonld",
+    "name": "Meetup Abu Dhabi",
+    "url": "https://www.meetup.com/find/?keywords=hackathon&location=ae--Abu%20Dhabi&source=EVENTS",
+    "assumeRegion": true
+  },
+  {
+    "type": "jsonld",
+    "name": "Meetup Sharjah",
+    "url": "https://www.meetup.com/find/?keywords=hackathon&location=ae--Sharjah&source=EVENTS",
+    "assumeRegion": true
+  }
+]

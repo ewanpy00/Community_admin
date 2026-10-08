@@ -1,0 +1,83 @@
+name: Hackathon scout
+
+on:
+  schedule:
+    # The posting times, 00:00, 06:00, 12:00 and 18:00 in Dubai, are 20:00,
+    # 02:00, 08:00 and 14:00 UTC. GitHub starts scheduled runs late when it is
+    # busy, most of all on the hour, so the run is set for five past; a second
+    # one an hour later picks up the post if the first was dropped. The bot
+    # itself never posts twice for one posting time.
+    - cron: '5 2,8,14,20 * * *'
+    - cron: '5 3,9,15,21 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'once: post if a post is due. dry-run: print the next post, publish nothing. post-now: post the next hackathon straight away.'
+        type: choice
+        default: once
+        options:
+          - once
+          - dry-run
+          - post-now
+
+# One pass at a time: two at once could both post for the same posting time.
+concurrency:
+  group: hackathon-scout
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  scout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      # What the bot has seen and posted is kept between runs as the single
+      # file of the "state" branch.
+      - name: Restore the bot's state
+        run: |
+          mkdir -p data
+          if git ls-remote --exit-code --heads origin state > /dev/null; then
+            git fetch --depth=1 origin state
+            git show FETCH_HEAD:state.json > data/state.json
+          else
+            echo "No saved state yet: the bot starts from its own posts in the community."
+          fi
+
+      - name: Run one pass
+        run: npm run ${{ inputs.mode || 'once' }}
+        env:
+          API_BASE_URL: ${{ secrets.API_BASE_URL }}
+          AGENT_KEY: ${{ secrets.AGENT_KEY }}
+          COMMUNITY_ID: ${{ secrets.COMMUNITY_ID }}
+
+      - name: Save the bot's state
+        run: |
+          if [ ! -s data/state.json ]; then
+            echo "This pass wrote no state."
+            exit 0
+          fi
+          blob=$(git hash-object -w data/state.json)
+          if [ "$(git rev-parse -q --verify FETCH_HEAD:state.json || true)" = "$blob" ]; then
+            echo "State unchanged."
+            exit 0
+          fi
+          tree=$(printf '100644 blob %s\tstate.json\n' "$blob" | git mktree)
+          commit=$(git commit-tree "$tree" -m "Bot state after run $GITHUB_RUN_ID")
+          # The branch holds only the latest state, so each save replaces it.
+          git push --force origin "$commit:refs/heads/state"
+        env:
+          GIT_AUTHOR_NAME: hackathon-scout
+          GIT_AUTHOR_EMAIL: hackathon-scout@users.noreply.github.com
+          GIT_COMMITTER_NAME: hackathon-scout
+          GIT_COMMITTER_EMAIL: hackathon-scout@users.noreply.github.com

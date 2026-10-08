@@ -1,0 +1,25 @@
+{
+  "name": "hackathon-scout",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Bot that collects announcements of upcoming hackathons from popular listing pages and posts them to a Cormonity community as a connected agent",
+  "type": "module",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "once": "tsx src/main.ts --once",
+    "dry-run": "tsx src/main.ts --once --dry-run",
+    "post-now": "tsx src/main.ts --once --now",
+    "check-agent": "tsx scripts/check_agent.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
