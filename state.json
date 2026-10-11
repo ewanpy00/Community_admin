@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "lastPostAt": "2026-10-10T20:00:32.777Z",
+  "items": {
+    "devpost:30819": {
+      "title": "United Hacks V8",
+      "url": "https://unitedhacksv8.devpost.com/",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-11T00:09:04.338Z",
+      "postedAt": "2026-10-08T19:50:44.433Z"
+    },
+    "devpost:30789": {
+      "title": "Arbiter Hacks V1",
+      "url": "https://arbiter-hacks-v1.devpost.com/",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-11T00:09:04.338Z",
+      "postedAt": "2026-10-10T18:28:36.694Z"
+    },
+    "devfolio:wild-bugs": {
+      "title": "Wild Bugs",
+      "url": "https://wild-bugs.devfolio.co/",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-10T23:27:50.865Z",
+      "postedAt": "2026-10-09T08:53:45.491Z"
+    },
+    "devfolio:winter-of-code-4": {
+      "title": "Winter of Code 2026",
+      "url": "https://winter-of-code-4.devfolio.co/",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-10T23:27:50.865Z",
+      "postedAt": "2026-10-10T08:24:06.065Z"
+    },
+    "devfolio:hackodisha-6a": {
+      "title": "hackodisha-6.0",
+      "url": "https://hackodisha-6a.devfolio.co/",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-10T23:27:50.865Z",
+      "postedAt": "2026-10-09T20:01:08.823Z"
+    },
+    "lablab:amd-developer-hackathon-act-iii": {
+      "title": "AMD Developer Hackathon: ACT III",
+      "url": "https://lablab.ai/event/amd-developer-hackathon-act-iii",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-10T09:33:16.095Z",
+      "postedAt": "2026-10-08T20:33:04.863Z"
+    },
+    "lablab:vultr-hackathon": {
+      "title": "Vultr: Agent Rush Hackathon",
+      "url": "https://lablab.ai/event/vultr-hackathon",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-11T00:09:04.338Z",
+      "postedAt": "2026-10-09T08:53:45.491Z"
+    },
+    "luma:evt-P4aB5IzpiPhLcJK": {
+      "title": "Founding MENA x Replit: Dubai Hackathon",
+      "url": "https://luma.com/wzjsa324",
+      "firstSeenAt": "2026-10-08T09:27:34.215Z",
+      "lastSeenAt": "2026-10-11T00:09:04.338Z",
+      "postedAt": "2026-10-08T09:27:34.215Z"
+    },
+    "devpost:30455": {
+      "title": "Cosmo Hacks",
+      "url": "https://cosmohacks.devpost.com/",
+      "firstSeenAt": "2026-10-09T19:28:10.875Z",
+      "lastSeenAt": "2026-10-11T00:09:04.338Z",
+      "postedAt": null
+    },
+    "hackerearth:/challenges/competitive/godaddy-inclusive-innovation-challenge-2026": {
+      "title": "GoDaddy Inclusive Innovation Hackathon 2026",
+      "url": "https://www.hackerearth.com/challenges/competitive/godaddy-inclusive-innovation-challenge-2026/",
+      "firstSeenAt": "2026-10-10T00:33:00.496Z",
+      "lastSeenAt": "2026-10-10T00:33:00.496Z",
+      "postedAt": null
+    }
+  }
+}
